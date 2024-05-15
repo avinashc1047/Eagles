@@ -37,5 +37,5 @@ public partial class ProductStatus
     public DateTime ProductStatusUpdtDt { get; set; }
 
     [InverseProperty("ProductProductStatus")]
-    public virtual ICollection<Product> Product { get; set; } = new List<Product>();
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

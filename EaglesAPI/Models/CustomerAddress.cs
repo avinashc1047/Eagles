@@ -55,14 +55,14 @@ public partial class CustomerAddress
     public DateTime CustomerAddressUpdtDt { get; set; }
 
     [ForeignKey("CustomerAddressAddressId")]
-    [InverseProperty("CustomerAddress")]
+    [InverseProperty("CustomerAddresses")]
     public virtual Address CustomerAddressAddress { get; set; } = null!;
 
     [ForeignKey("CustomerAddressAddressTypeId")]
-    [InverseProperty("CustomerAddress")]
+    [InverseProperty("CustomerAddresses")]
     public virtual AddressType CustomerAddressAddressType { get; set; } = null!;
 
     [ForeignKey("CustomerAddressCustomerId")]
-    [InverseProperty("CustomerAddress")]
+    [InverseProperty("CustomerAddresses")]
     public virtual Customer CustomerAddressCustomer { get; set; } = null!;
 }

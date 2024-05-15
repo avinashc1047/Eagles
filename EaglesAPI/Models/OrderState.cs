@@ -45,10 +45,10 @@ public partial class OrderState
     public DateTime OrderStateUpdtDt { get; set; }
 
     [ForeignKey("OrderStateOrderStatusId")]
-    [InverseProperty("OrderState")]
+    [InverseProperty("OrderStates")]
     public virtual OrderStatus OrderStateOrderStatus { get; set; } = null!;
 
     [ForeignKey("OrderStateOrdersId")]
-    [InverseProperty("OrderState")]
-    public virtual Orders OrderStateOrders { get; set; } = null!;
+    [InverseProperty("OrderStates")]
+    public virtual Order OrderStateOrders { get; set; } = null!;
 }

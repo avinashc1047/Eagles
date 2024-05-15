@@ -37,5 +37,5 @@ public partial class AddressType
     public DateTime AddressTypeUpdtDt { get; set; }
 
     [InverseProperty("CustomerAddressAddressType")]
-    public virtual ICollection<CustomerAddress> CustomerAddress { get; set; } = new List<CustomerAddress>();
+    public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; } = new List<CustomerAddress>();
 }

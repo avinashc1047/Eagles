@@ -49,10 +49,10 @@ public partial class OrdersLine
     public string OrdersLineInventoryId { get; set; } = null!;
 
     [ForeignKey("OrdersLineInventoryId")]
-    [InverseProperty("OrdersLine")]
+    [InverseProperty("OrdersLines")]
     public virtual Inventory OrdersLineInventory { get; set; } = null!;
 
     [ForeignKey("OrdersLineOrdersId")]
-    [InverseProperty("OrdersLine")]
-    public virtual Orders OrdersLineOrders { get; set; } = null!;
+    [InverseProperty("OrdersLines")]
+    public virtual Order OrdersLineOrders { get; set; } = null!;
 }

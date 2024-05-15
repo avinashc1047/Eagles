@@ -47,12 +47,15 @@ public partial class Product
     public DateTime ProductUpdtDt { get; set; }
 
     [InverseProperty("InventoryProduct")]
-    public virtual ICollection<Inventory> Inventory { get; set; } = new List<Inventory>();
+    public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
+
+    [InverseProperty("ProductAttrProduct")]
+    public virtual ICollection<ProductAttr> ProductAttrs { get; set; } = new List<ProductAttr>();
 
     [InverseProperty("ProductPriceProduct")]
-    public virtual ICollection<ProductPrice> ProductPrice { get; set; } = new List<ProductPrice>();
+    public virtual ICollection<ProductPrice> ProductPrices { get; set; } = new List<ProductPrice>();
 
     [ForeignKey("ProductProductStatusId")]
-    [InverseProperty("Product")]
+    [InverseProperty("Products")]
     public virtual ProductStatus ProductProductStatus { get; set; } = null!;
 }

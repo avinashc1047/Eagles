@@ -55,12 +55,12 @@ public partial class Customer
     public string? CustomerGenderId { get; set; }
 
     [InverseProperty("CustomerAddressCustomer")]
-    public virtual ICollection<CustomerAddress> CustomerAddress { get; set; } = new List<CustomerAddress>();
+    public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; } = new List<CustomerAddress>();
 
     [ForeignKey("CustomerGenderId")]
-    [InverseProperty("Customer")]
+    [InverseProperty("Customers")]
     public virtual Gender? CustomerGender { get; set; }
 
     [InverseProperty("OrdersCustomer")]
-    public virtual ICollection<Orders> Orders { get; set; } = new List<Orders>();
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

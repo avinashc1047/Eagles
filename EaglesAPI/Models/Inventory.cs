@@ -20,11 +20,6 @@ public partial class Inventory
     [Unicode(false)]
     public string InventoryProductId { get; set; } = null!;
 
-    [Column("INVENTORY_SERIAL_NBR")]
-    [StringLength(50)]
-    [Unicode(false)]
-    public string? InventorySerialNbr { get; set; }
-
     [Column("INVENTORY_CRTD_ID")]
     [StringLength(40)]
     [Unicode(false)]
@@ -41,13 +36,16 @@ public partial class Inventory
     [Column("INVENTORY_UPDT_DT", TypeName = "DATE")]
     public DateTime InventoryUpdtDt { get; set; }
 
+    [InverseProperty("InventoryAttrValInventory")]
+    public virtual ICollection<InventoryAttrVal> InventoryAttrVals { get; set; } = new List<InventoryAttrVal>();
+
     [ForeignKey("InventoryProductId")]
-    [InverseProperty("Inventory")]
+    [InverseProperty("Inventories")]
     public virtual Product InventoryProduct { get; set; } = null!;
 
     [InverseProperty("InventoryStateInventory")]
-    public virtual ICollection<InventoryState> InventoryState { get; set; } = new List<InventoryState>();
+    public virtual ICollection<InventoryState> InventoryStates { get; set; } = new List<InventoryState>();
 
     [InverseProperty("OrdersLineInventory")]
-    public virtual ICollection<OrdersLine> OrdersLine { get; set; } = new List<OrdersLine>();
+    public virtual ICollection<OrdersLine> OrdersLines { get; set; } = new List<OrdersLine>();
 }

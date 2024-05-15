@@ -43,6 +43,6 @@ public partial class ProductPrice
     public DateTime ProductPriceUpdtDt { get; set; }
 
     [ForeignKey("ProductPriceProductId")]
-    [InverseProperty("ProductPrice")]
+    [InverseProperty("ProductPrices")]
     public virtual Product ProductPriceProduct { get; set; } = null!;
 }

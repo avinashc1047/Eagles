@@ -23,7 +23,7 @@ public partial class OrderStatus
     [Column("ORDER_STATUS_NEXT_ORDER_STATUS_ID")]
     [StringLength(32)]
     [Unicode(false)]
-    public string OrderStatusNextOrderStatusId { get; set; } = null!;
+    public string? OrderStatusNextOrderStatusId { get; set; }
 
     [Column("ORDER_STATUS_CRTD_ID")]
     [StringLength(40)]
@@ -45,9 +45,9 @@ public partial class OrderStatus
     public virtual ICollection<OrderStatus> InverseOrderStatusNextOrderStatus { get; set; } = new List<OrderStatus>();
 
     [InverseProperty("OrderStateOrderStatus")]
-    public virtual ICollection<OrderState> OrderState { get; set; } = new List<OrderState>();
+    public virtual ICollection<OrderState> OrderStates { get; set; } = new List<OrderState>();
 
     [ForeignKey("OrderStatusNextOrderStatusId")]
     [InverseProperty("InverseOrderStatusNextOrderStatus")]
-    public virtual OrderStatus OrderStatusNextOrderStatus { get; set; } = null!;
+    public virtual OrderStatus? OrderStatusNextOrderStatus { get; set; }
 }

@@ -37,5 +37,5 @@ public partial class InventoryStatus
     public DateTime InventoryStatusUpdtDt { get; set; }
 
     [InverseProperty("InventoryStateInventoryStatus")]
-    public virtual ICollection<InventoryState> InventoryState { get; set; } = new List<InventoryState>();
+    public virtual ICollection<InventoryState> InventoryStates { get; set; } = new List<InventoryState>();
 }

@@ -46,10 +46,10 @@ public partial class InventoryState
     public DateTime InventoryStateUpdtDt { get; set; }
 
     [ForeignKey("InventoryStateInventoryId")]
-    [InverseProperty("InventoryState")]
+    [InverseProperty("InventoryStates")]
     public virtual Inventory InventoryStateInventory { get; set; } = null!;
 
     [ForeignKey("InventoryStateInventoryStatusId")]
-    [InverseProperty("InventoryState")]
+    [InverseProperty("InventoryStates")]
     public virtual InventoryStatus InventoryStateInventoryStatus { get; set; } = null!;
 }
